@@ -1,2 +1,9 @@
 # backend
-Server providing "RESTful" access to database of achievements
+
+## Setup
+```
+$ virtualenv venv
+$ . venv/bin/activate
+$ pip install -r requirements.txt
+$ python app.py
+```
