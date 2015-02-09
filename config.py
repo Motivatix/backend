@@ -1,3 +1,2 @@
-DATABASE_URL = 'sqlite:///motivatix.db'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///motivatix.db'
 DEBUG = True
-SECRET_KEY = 'development key'

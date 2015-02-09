@@ -1,12 +1,8 @@
-from sqlalchemy import Column, String, Integer
-from sqlalchemy.ext.declarative import declarative_base
+from motivatix import db
 
-Base = declarative_base()
-
-class Person(Base):
-	__tablename__ = 'person'
-	id = Column(Integer, primary_key=True)
-	name = Column(String, nullable=False)
+class Person(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	name = db.Column(db.String, nullable=False)
 
 	def __repr__(self):
 		return "<Person(name='%s')>" % (self.name)
