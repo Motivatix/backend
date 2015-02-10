@@ -1,4 +1,5 @@
-from motivatix import app
+from motivatix import create_app
 
 if __name__ == '__main__':
+    app = create_app('default')
     app.run()

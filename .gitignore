@@ -52,3 +52,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Motivatix specific files
+venv/
+motivatix.db
