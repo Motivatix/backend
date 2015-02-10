@@ -2,8 +2,8 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.testing import TestCase
 
-from ..motivatix import create_app, db
-from ..motivatix.models import Person, Achievement
+from motivatix import create_app, db
+from motivatix.models import Person, Achievement
 
 class BaseTestCase(TestCase):
 	def create_app(self):
