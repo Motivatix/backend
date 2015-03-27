@@ -34,7 +34,8 @@ class BaseTestCase(TestCase):
 
         steve = Person(name='Steve Jobs')
         self.db.session.add(steve)
-        achievementsSteve = [('Founded Apple Computer Company with Wozniak', 21),
+        achievementsSteve = [('Founded Apple Computer '
+                              'Company with Wozniak', 21),
                              ('Stanford speech', 50)]
         for description, age in achievementsSteve:
             a = Achievement(description=description, age=age)
