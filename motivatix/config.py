@@ -1,13 +1,15 @@
 class DevelopmentConfig():
-	SQLALCHEMY_DATABASE_URI = 'sqlite:///motivatix.db'
-	DEBUG = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///motivatix.db'
+    DEBUG = True
+
 
 class TestingConfig():
-	SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+
 
 config = {
-	'development': DevelopmentConfig,
-	'testing': TestingConfig,
+    'development': DevelopmentConfig,
+    'testing': TestingConfig,
 
-	'default': DevelopmentConfig
+    'default': DevelopmentConfig
 }
