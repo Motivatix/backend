@@ -7,6 +7,9 @@ class Person(db.Model):
     achievements = db.relationship('Achievement', backref='person',
                                    lazy='dynamic')
 
+    def __init__(self, name):
+        self.name = name
+
     def __repr__(self):
         return "<Person(name='%s')>" % (self.name)
 
@@ -17,6 +20,11 @@ class Achievement(db.Model):
     age = db.Column(db.Integer)
     person_id = db.Column(db.Integer, db.ForeignKey('person.id'))
 
+    def __init__(self, description, age, person):
+        self.description = description
+        self.age = age
+        self.person = person
+
     def __repr__(self):
-        return "<Achievement(name='%s', age='%s')>" % (self.description,
+        return "<Achievement(desc='%s', age='%s')>" % (self.description,
                                                        self.age)
