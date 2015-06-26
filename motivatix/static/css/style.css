@@ -1,0 +1,148 @@
+body {
+	background-image: url('../images/bg.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: rgb(45, 33, 96);
+	color: white;
+}
+
+html, body {
+    height: 100%;
+    font-family: Open Sans; 
+}
+
+h1{
+	font-size:54px;
+	text-decoration: none;
+}
+
+a{
+	color: white;
+}
+
+a:hover{
+	text-decoration: none;
+	color:#eee;
+}
+
+.wrapit {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -320px;
+}
+
+.beit {
+	width: 640px;
+	height: 300px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.credits{
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin:10px;
+	font-size: 12px;
+}
+
+.input-group{
+	width: 100%;
+}
+
+.btn{
+	width: 100%;
+}
+
+.navbar-form{
+	padding:0;
+}
+
+.imgal {
+  text-align: center;
+}
+
+.faceimg {
+	display: inline-block;
+	height: 145px;
+	width: 145px;
+	background-position: center center;
+	background-size: cover;
+	transition: 400ms 50ms;
+	border-radius: 50%;
+	opacity: 0.5;
+}
+.imgal a{
+	margin-right: 16px;
+}
+.imgal a:last-of-type{
+	margin: 0;
+}
+.faceimg:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+
+.faceimg .facename{
+	opacity: 0;
+	margin-top: 100px;
+	text-shadow: 0px 0px 4px rgba(100, 100, 100, 1);
+}
+
+.faceimg:hover .facename{
+	opacity: 1;
+}
+
+.searchblock{
+	margin-top: 29px;
+}
+
+.achievement{
+	padding: 9px 14px;
+	margin-bottom: 14px;
+	background-color: rgba(247,247,249,0.8);
+	border: 1px solid #c2c2c9;
+	border-radius: 4px;
+	color: #0C1013;
+}
+
+.description{
+	padding-bottom: 10px;
+}
+
+.name{
+	margin-top: 10px;
+}
+
+.age {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;	
+	background-color: rgba(247,247,249,0.8);
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 12px;
+	color: #0C1013;
+	font-size: 24px;
+	border: 1px solid #c2c2c9;
+}
+
+.photo {
+	width: 145px;
+	height: 145px;
+	border-radius: 50%;	
+	background-color: rgba(247,247,249,0.8);
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	background-position: center;
+	background-size: cover;
+}
+
+.row:last-of-type{
+	padding-bottom: 20px;
+}
