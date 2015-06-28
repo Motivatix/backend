@@ -1,28 +1,31 @@
-from flask import abort, jsonify
-from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+from flask import abort, render_template, request
+from sqlalchemy.orm.exc import MultipleResultsFound
 
 from . import app
-from models import Person, Achievement
+from search import search_by_name, search_by_age
 
 
-@app.route('/achievements/<name>/')
-def get_achievements_by_person(name):
-    name = name.replace('_', ' ')
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+# srch-term can be
+# - name of person: returns all his/her achievements
+# - age: returns some (10? 20?) achievements achieved at that age
+@app.route('/search', methods=['GET'])
+def search():
+    search_term = request.args.get('srch-term', '')
+
     try:
-        person = Person.query.filter_by(name=name).one()
+        try:
+            age = int(search_term)
+            achievements = search_by_age(search_term)
+            return render_template('search.html', mode='age', age=age,
+                                   achievements=achievements)
+        except ValueError:
+            achievements = search_by_name(search_term)
+            return render_template('search.html', mode='name',
+                                   name=search_term, achievements=achievements)
     except MultipleResultsFound:
         abort(500)  # Internal Server Error
-    except NoResultFound:
-        abort(404)  # Not Found
-    response = [{'description': a.description, 'age': a.age}
-                for a in person.achievements.all()]
-    return jsonify(achievements=response)
-
-
-@app.route('/achievements/<int:age>/')
-def get_achievements_by_age(age):
-    achievements = Achievement.query.filter_by(age=age).all()
-
-    response = [{'person': a.person.name, 'description': a.description}
-                for a in achievements]
-    return jsonify(achievements=response)

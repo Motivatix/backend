@@ -31,7 +31,7 @@
 	    	<div class="col-md-8 searchblock">
 		        <form class="navbar-form" role="search">
 		          <div class="input-group">
-		            <input type="text" class="form-control" placeholder="eg. Steve Jobs, Bill Gates, ..." name="srch-term" id="srch-term">
+		            <input type="text" class="form-control" placeholder="eg. Steve Jobs, Bill Gates, ..., or your age" name="srch-term" id="srch-term">
 		            <div class="input-group-btn">
 		              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 		            </div>
@@ -42,58 +42,73 @@
 	        Motivatix © 2014-2015 :: Matej Krajčovič, Mrshu, Pepol, ViRPo
 	        </div>
  		</div>
- 		<div class="row">
- 			<div class="col-md-3"></div>
- 			<div class="col-md-7 text-center"><div style="background-image: url('http://www.aip-inc.us/upload/blank-face.jpg')" class="photo"></div>
- 			<div class="col-md-2"></div>
- 		</div>
- 		<div class="row">
- 			<div class="col-md-3"></div>
- 			<div class="col-md-7 text-center"><h2 class="name">Elon Musk</h2></div>
- 			<div class="col-md-2"></div>
- 		</div>
- 		<div class="row description">
- 			<div class="col-md-2"></div>
- 			<div class="col-md-1 text-center">Age</div>
- 			<div class="col-md-7 text-center">Achievement</div>
- 			<div class="col-md-2"></div>
- 		</div>
- 		<div class="row">
- 			<div class="col-md-2"></div>
- 			<div class="col-md-1 text-center"><div class="age">15</div></div>
- 			<div class="col-md-7 achievement">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
- 			<div class="col-md-2"></div>
- 		</div>
- 		<div class="row">
- 			<div class="col-md-2"></div>
- 			<div class="col-md-1 text-center"></div>
- 			<div class="col-md-7 achievement">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
- 			<div class="col-md-2"></div>
- 		</div>
- 		<div class="row">
- 			<div class="col-md-2"></div>
- 			<div class="col-md-1 text-center"><div class="age">19</div></div>
- 			<div class="col-md-7 achievement">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div> 			
- 			<div class="col-md-2"></div>
- 		</div>
- 		<div class="row">
- 			<div class="col-md-2"></div>
- 			<div class="col-md-1 text-center"><div class="age">28</div></div>
- 			<div class="col-md-7 achievement">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
- 			<div class="col-md-2"></div>
- 		</div>
- 		<div class="row">
- 			<div class="col-md-2"></div>
- 			<div class="col-md-1 text-center"></div>
- 			<div class="col-md-7 achievement">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
- 			<div class="col-md-2"></div>
- 		</div>
- 		<div class="row">
- 			<div class="col-md-2"></div>
- 			<div class="col-md-1 text-center"><div class="age">32</div></div>
- 			<div class="col-md-7 achievement">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
- 			<div class="col-md-2"></div>
- 		</div>
+        {% if mode == 'name' %}
+ 		    <div class="row">
+ 			  <div class="col-md-3"></div>
+ 			  <div class="col-md-7 text-center"><div style="background-image: url('http://www.aip-inc.us/upload/blank-face.jpg')" class="photo"></div>
+ 			  <div class="col-md-2"></div>
+ 		    </div>
+            <div class="row">
+ 		      <div class="col-md-3"></div>
+ 		      <div class="col-md-7 text-center"><h2 class="name">{{ name }}</h2></div>
+ 		      <div class="col-md-2"></div>
+ 		    </div>
+
+            {% if not achievements %}
+                <div class="row">
+ 		          <div class="col-md-2"></div>
+ 		          <div class="col-md-7 achievement">No achievements.</div>
+ 		          <div class="col-md-2"></div>
+ 		        </div>
+            {% else %}
+                <div class="row description">
+ 		          <div class="col-md-2"></div>
+ 		          <div class="col-md-1 text-center">Age</div>
+ 		          <div class="col-md-7 text-center">Achievement</div>
+ 		          <div class="col-md-2"></div>
+ 		        </div>
+
+                {% for achievement in achievements %}
+                <div class="row">
+ 		          <div class="col-md-2"></div>
+ 		          <div class="col-md-1 text-center"><div class="age">{{ achievement.age }}</div></div>
+ 		          <div class="col-md-7 achievement">{{ achievement.description }}</div>
+ 		          <div class="col-md-2"></div>
+ 		        </div>
+                {% endfor %}
+            {% endif %}
+
+        {% elif mode == 'age' %}
+            <div class="row">
+ 			  <div class="col-md-3"></div>
+ 			  <div class="col-md-7 text-center"><h2 class="name">{{ age }}</h2></div>
+ 			  <div class="col-md-2"></div>
+ 		    </div>
+
+            {% if not achievements %}
+                <div class="row">
+ 		          <div class="col-md-2"></div>
+ 		          <div class="col-md-7 achievement">No achievements.</div>
+ 		          <div class="col-md-2"></div>
+ 		        </div>
+            {% else %}
+                <div class="row description">
+ 		          <div class="col-md-2"></div>
+ 		          <div class="col-md-1 text-center">Person</div>
+ 		          <div class="col-md-7 text-center">Achievement</div>
+ 		          <div class="col-md-2"></div>
+ 		        </div>
+
+                {% for achievement in achievements %}
+                    <div class="row">
+ 		              <div class="col-md-2"></div>
+ 		              <div class="col-md-1 person">{{ achievement.person }}</div>
+ 		              <div class="col-md-7 achievement">{{ achievement.description }}</div>
+ 		              <div class="col-md-2"></div>
+ 		            </div>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
 <!-- CONTENT END -->
 
 <!-- FOOTER START -->
