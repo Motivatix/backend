@@ -4,11 +4,12 @@ from . import db
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
+    thumbnail = db.Column(db.String, nullable=False)
     achievements = db.relationship('Achievement', backref='person',
                                    lazy='dynamic')
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, name, thumbnail):
+        self.name, self.thumbnail = name, thumbnail
 
     def __repr__(self):
         return "<Person(name='%s')>" % (self.name)

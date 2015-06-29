@@ -42,11 +42,11 @@ def main(args):
     with open(names_list) as f_names:
         for line in f_names:
             line = line.strip()
-            name, wiki_id, _ = line.split('\t')
+            name, wiki_id, _, thumbnail = line.split('\t')
             name = name.decode('utf-8')
             p_db = Person.query.filter_by(name=name).all()
             if len(p_db) == 0:
-                person = Person(name)
+                person = Person(name, thumbnail)
                 db.session.add(person)
             else:
                 person = p_db[0]
